@@ -32,9 +32,12 @@ dependencies:
   cupertino_icons: ^1.0.1
   google_fonts: ^1.1.1
   aad_oauth: ^0.2.1
-  flutter_instagram_stories: ^0.1.5+7
   firebase_core: ^0.5.3
   cloud_firestore: ^0.14.3
+  cached_network_image: ^2.2.0+1
+  video_player: ^0.10.11+2
+  dashed_circle: ^0.0.1
+  curved_navigation_bar: ^0.3.2
 
 
 

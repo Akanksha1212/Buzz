@@ -51,7 +51,7 @@ packages:
     source: hosted
     version: "2.1.0-nullsafety.3"
   cached_network_image:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: cached_network_image
       url: "https://pub.dartlang.org"
@@ -141,13 +141,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.2"
-  dotted_border:
-    dependency: transitive
+  curved_navigation_bar:
+    dependency: "direct main"
     description:
-      name: dotted_border
+      name: curved_navigation_bar
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.7"
+    version: "0.3.7"
+  dashed_circle:
+    dependency: "direct main"
+    description:
+      name: dashed_circle
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1"
   fake_async:
     dependency: transitive
     description:
@@ -214,13 +221,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_instagram_stories:
-    dependency: "direct main"
-    description:
-      name: flutter_instagram_stories
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.1.5+7"
   flutter_secure_storage:
     dependency: transitive
     description:
@@ -304,13 +304,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.3-nullsafety.3"
-  json_annotation:
-    dependency: transitive
-    description:
-      name: json_annotation
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.1.1"
   json_rpc_2:
     dependency: transitive
     description:
@@ -374,20 +367,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0-nullsafety.3"
-  path_drawing:
-    dependency: transitive
-    description:
-      name: path_drawing
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.4.1+1"
-  path_parsing:
-    dependency: transitive
-    description:
-      name: path_parsing
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.1.4"
   path_provider:
     dependency: transitive
     description:
@@ -646,12 +625,12 @@ packages:
     source: hosted
     version: "2.1.0-nullsafety.5"
   video_player:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: video_player
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.1"
+    version: "0.10.12+5"
   video_player_platform_interface:
     dependency: transitive
     description:

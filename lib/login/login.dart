@@ -1,6 +1,9 @@
 import 'package:aad_oauth/aad_oauth.dart';
 import 'package:aad_oauth/model/config.dart';
+import 'package:buzz/Screens/bottomNav.dart';
+import 'package:buzz/Screens/data.dart';
 import 'package:buzz/Screens/home.dart';
+import 'package:buzz/Screens/storyScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -80,7 +83,10 @@ class _LoginState extends State<Login> {
           child: const Text('Ok'),
           onPressed: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => Home()));
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomePage(),
+                ));
           })
     ]);
     showDialog(context: context, builder: (BuildContext context) => alert);
