@@ -80,7 +80,17 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
-            )
+            ),
+            SizedBox(
+              width: 5,
+            ),
+            Container(
+              margin: EdgeInsets.all(0),
+              alignment: Alignment.bottomRight,
+              child: Image.asset(
+                'assets/gi.png',
+              ),
+            ),
           ],
         ));
   }

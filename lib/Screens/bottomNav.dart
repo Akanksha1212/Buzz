@@ -1,3 +1,4 @@
+import 'package:buzz/Screens/addBanter.dart';
 import 'package:buzz/Screens/profile.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:buzz/Screens/home.dart';
@@ -11,7 +12,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<Widget> _widgetOptions = <Widget>[
     Home(),
-    Home(),
+    AddBanter(),
     Profile(),
   ];
   int _currentIndex = 0;

@@ -69,7 +69,7 @@ class _ProfileState extends State<Profile> {
                               textStyle: TextStyle(
                                 color: Color(0xff7ccccc),
                                 fontSize: 12,
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w400,
                               ),
                             ),
                           ),
@@ -79,7 +79,7 @@ class _ProfileState extends State<Profile> {
                               textStyle: TextStyle(
                                 color: Color(0xff7ccccc),
                                 fontSize: 12,
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w400,
                               ),
                             ),
                           ),
@@ -89,7 +89,7 @@ class _ProfileState extends State<Profile> {
                               textStyle: TextStyle(
                                 color: Color(0xff7ccccc),
                                 fontSize: 12,
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w400,
                               ),
                             ),
                           ),
@@ -103,7 +103,7 @@ class _ProfileState extends State<Profile> {
                                     textStyle: TextStyle(
                                       color: Colors.white,
                                       fontSize: 14,
-                                      fontWeight: FontWeight.w500,
+                                      fontWeight: FontWeight.w400,
                                     ),
                                   ),
                                 ),
