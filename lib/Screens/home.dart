@@ -1,6 +1,7 @@
 import 'package:buzz/Screens/storyScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:dashed_circle/dashed_circle.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'data.dart';
 
@@ -23,28 +24,40 @@ class _HomeState extends State<Home> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    DashedCircle(
-                      child: Padding(
-                        padding: EdgeInsets.all(6.0),
-                        child: GestureDetector(
-                          child: CircleAvatar(
-                            radius: 40.0,
-                            // backgroundImage: NetworkImage(
-                            //     'https://img.icons8.com/clouds/2x/plus.png'),
-                            child: Icon(Icons.add),
+                    Column(children: [
+                      DashedCircle(
+                        child: Padding(
+                          padding: EdgeInsets.all(6.0),
+                          child: GestureDetector(
+                            child: CircleAvatar(
+                              radius: 40.0,
+                              // backgroundImage: NetworkImage(
+                              //     'https://img.icons8.com/clouds/2x/plus.png'),
+                              child: Icon(Icons.add),
+                            ),
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        StoryScreen(stories: stories),
+                                  ));
+                            },
                           ),
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      StoryScreen(stories: stories),
-                                ));
-                          },
+                        ),
+                        color: Color(0xff7ccccc),
+                      ),
+                      Text(
+                        'Add',
+                        style: GoogleFonts.poppins(
+                          textStyle: TextStyle(
+                            color: Color(0xff7ccccc),
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ),
-                      color: Color(0xff7ccccc),
-                    ),
+                    ]),
                     SizedBox(
                       width: 13,
                     ),
@@ -52,98 +65,17 @@ class _HomeState extends State<Home> {
                     SizedBox(
                       width: 13,
                     ),
-                    DashedCircle(
-                      child: Padding(
-                        padding: EdgeInsets.all(6.0),
-                        child: GestureDetector(
-                          child: CircleAvatar(
-                            radius: 40.0,
-                            backgroundImage: NetworkImage(
-                                'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg'),
-                          ),
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      StoryScreen(stories: stories),
-                                ));
-                          },
-                        ),
-                      ),
-                      color: Color(0xff7ccccc),
-                    ),
+                    MyStory(),
                     SizedBox(
                       width: 13,
                     ),
-                    DashedCircle(
-                      child: Padding(
-                        padding: EdgeInsets.all(6.0),
-                        child: GestureDetector(
-                          child: CircleAvatar(
-                            radius: 40.0,
-                            backgroundImage: NetworkImage(
-                                'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg'),
-                          ),
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      StoryScreen(stories: stories),
-                                ));
-                          },
-                        ),
-                      ),
-                      color: Color(0xff7ccccc),
-                    ),
+                    MyStory(),
                     SizedBox(
                       width: 13,
                     ),
-                    DashedCircle(
-                      child: Padding(
-                        padding: EdgeInsets.all(6.0),
-                        child: GestureDetector(
-                          child: CircleAvatar(
-                            radius: 40.0,
-                            backgroundImage: NetworkImage(
-                                'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg'),
-                          ),
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      StoryScreen(stories: stories),
-                                ));
-                          },
-                        ),
-                      ),
-                      color: Color(0xff7ccccc),
-                    ),
+                    MyStory(),
                     SizedBox(
                       width: 13,
-                    ),
-                    DashedCircle(
-                      child: Padding(
-                        padding: EdgeInsets.all(6.0),
-                        child: GestureDetector(
-                          child: CircleAvatar(
-                            radius: 40.0,
-                            backgroundImage: NetworkImage(
-                                'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg'),
-                          ),
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      StoryScreen(stories: stories),
-                                ));
-                          },
-                        ),
-                      ),
-                      color: Color(0xff7ccccc),
                     ),
                   ],
                 ),
@@ -193,32 +125,47 @@ class _MyStoryState extends State<MyStory> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      child: RotationTransition(
-        turns: base,
-        child: DashedCircle(
-          gapSize: gap.value,
-          dashes: 40,
-          color: Color(0xff7ccccc),
-          child: RotationTransition(
-            turns: reverse,
-            child: Padding(
-              padding: const EdgeInsets.all(5.0),
-              child: GestureDetector(
-                  child: CircleAvatar(
-                    radius: 40.0,
-                    backgroundImage: NetworkImage(
-                        "https://images.unsplash.com/photo-1564564295391-7f24f26f568b"),
-                  ),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => StoryScreen(stories: stories),
-                        ));
-                  }),
+      child: Column(
+        children: [
+          RotationTransition(
+            turns: base,
+            child: DashedCircle(
+              gapSize: gap.value,
+              dashes: 40,
+              color: Color(0xff7ccccc),
+              child: RotationTransition(
+                turns: reverse,
+                child: Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: GestureDetector(
+                      child: CircleAvatar(
+                        radius: 40.0,
+                        backgroundImage: NetworkImage(
+                            "https://images.unsplash.com/photo-1564564295391-7f24f26f568b"),
+                      ),
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  StoryScreen(stories: stories),
+                            ));
+                      }),
+                ),
+              ),
             ),
           ),
-        ),
+          Text(
+            'Olivia',
+            style: GoogleFonts.poppins(
+              textStyle: TextStyle(
+                color: Color(0xff7ccccc),
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
