@@ -121,37 +121,32 @@ class _HomeState extends State<Home> {
               SizedBox(
                 width: 5,
               ),
-              Container(
-                margin: EdgeInsets.all(0),
-                alignment: Alignment.bottomRight,
-                child: Image.asset(
-                  'assets/gi.png',
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.all(0),
-                alignment: Alignment.bottomRight,
-                child: Image.asset(
-                  'assets/gi.png',
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.all(0),
-                alignment: Alignment.bottomRight,
-                child: Image.asset(
-                  'assets/gi.png',
-                ),
+              // Container(
+              //   width: 350,
+              //   child: Divider(
+              //     color: Color(0xff7ccccc),
+              //   ),
+              // ),
+
+              EachPost(),
+              SizedBox(
+                height: 25,
               ),
               EachPost(),
               SizedBox(
                 height: 25,
               ),
-              Container(
-                margin: EdgeInsets.all(0),
-                alignment: Alignment.bottomRight,
-                child: Image.asset(
-                  'assets/gi.png',
-                ),
+              EachPost(),
+              SizedBox(
+                height: 25,
+              ),
+              EachPost(),
+              SizedBox(
+                height: 25,
+              ),
+              EachPost(),
+              SizedBox(
+                height: 25,
               ),
             ],
           ),
@@ -302,7 +297,7 @@ class _EachPostState extends State<EachPost> {
                         ),
                       ),
                       Text(
-                        '250k Plays | 500 Banters',
+                        '250k Plays   |   500 Banters',
                         textAlign: TextAlign.center,
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
