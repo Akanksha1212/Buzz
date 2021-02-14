@@ -49,32 +49,74 @@ class _FeatureButtonsViewState extends State<FeatureButtonsView> {
                     Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: LinearProgressIndicator()),
-                    Text('Uplaoding to Firebase'),
+                    Text('Uplaoding...'),
                   ],
                 )
               : Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    IconButton(
-                      icon: Icon(Icons.replay),
-                      onPressed: _onRecordAgainButtonPressed,
+                    CircleAvatar(
+                      radius: 35,
+                      backgroundColor: Colors.white,
+                      child: IconButton(
+                        iconSize: 30,
+                        color: Color(0xff7ccccc),
+                        icon: Icon(
+                          Icons.replay,
+                        ),
+                        onPressed: _onRecordAgainButtonPressed,
+                      ),
                     ),
-                    IconButton(
-                      icon: Icon(_isPlaying ? Icons.pause : Icons.play_arrow),
-                      onPressed: _onPlayButtonPressed,
+                    SizedBox(
+                      width: 15,
                     ),
-                    IconButton(
-                      icon: Icon(Icons.upload_file),
-                      onPressed: _onFileUploadButtonPressed,
+                    CircleAvatar(
+                      radius: 48,
+                      backgroundColor: Color(0xff7ccccc),
+                      child: CircleAvatar(
+                        radius: 45,
+                        backgroundColor: Colors.white,
+                        child: IconButton(
+                          color: Color(0xff7ccccc),
+                          iconSize: 50,
+                          icon: Icon(
+                            _isPlaying ? Icons.pause : Icons.play_arrow,
+                          ),
+                          onPressed: _onPlayButtonPressed,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    CircleAvatar(
+                      radius: 35,
+                      backgroundColor: Colors.white,
+                      child: IconButton(
+                        iconSize: 30,
+                        color: Color(0xff7ccccc),
+                        icon: Icon(
+                          Icons.upload_rounded,
+                        ),
+                        onPressed: _onFileUploadButtonPressed,
+                      ),
                     ),
                   ],
                 )
-          : IconButton(
-              icon: _isRecording
-                  ? Icon(Icons.pause)
-                  : Icon(Icons.fiber_manual_record),
-              onPressed: _onRecordButtonPressed,
+          : CircleAvatar(
+              radius: 48,
+              backgroundColor: Color(0xff7ccccc),
+              child: CircleAvatar(
+                radius: 45,
+                backgroundColor: Colors.white,
+                child: IconButton(
+                  iconSize: 55,
+                  color: Color(0xff7ccccc),
+                  icon: _isRecording ? Icon(Icons.pause) : Icon(Icons.mic),
+                  onPressed: _onRecordButtonPressed,
+                ),
+              ),
             ),
     );
   }

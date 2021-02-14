@@ -1,6 +1,8 @@
-import 'package:buzz/record/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:buzz/record/cloud_record_list_view.dart';
+import 'package:buzz/record/feature_buttons_view.dart';
 
 class AddBanter extends StatefulWidget {
   @override
@@ -8,6 +10,14 @@ class AddBanter extends StatefulWidget {
 }
 
 class _AddBanterState extends State<AddBanter> {
+  List<Reference> references;
+
+  @override
+  void initState() {
+    super.initState();
+    _onUploadComplete();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,109 +32,33 @@ class _AddBanterState extends State<AddBanter> {
               alignment: Alignment.bottomRight,
               child: Image.asset('assets/path.png', height: 200, width: 200),
             ),
-            Container(
-              margin: EdgeInsets.fromLTRB(0, 40, 0, 10),
-              height: MediaQuery.of(context).size.height / 2.8,
-              width: MediaQuery.of(context).size.width / 1.1,
-              child: Card(
-                  elevation: 5,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 20,
-                      ),
-                      CircleAvatar(
-                        radius: 60.0,
-                        backgroundImage: NetworkImage(
-                            'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29ufGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80'),
-                      ),
-                      SizedBox(
-                        height: 15,
-                      ),
-                      Text(
-                        'Akanksha Singh | @akankshaha',
-                        style: GoogleFonts.poppins(
-                          textStyle: TextStyle(
-                            color: Color(0xff7ccccc),
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                          ),
+            Expanded(
+              flex: 4,
+              child: references == null
+                  ? Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 40),
+                          child: LinearProgressIndicator(),
                         ),
-                      ),
-                      SizedBox(
-                        height: 15,
-                      ),
-                      Container(
-                        width: 300,
-                        child: Divider(
-                          color: Colors.black26,
+                        Text('Fetching your old banters')
+                      ],
+                    )
+                  : references.isEmpty
+                      ? Center(
+                          child: Text('No banter added yet'),
+                        )
+                      : CloudRecordListView(
+                          references: references,
                         ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            '     200\nBanters',
-                            style: GoogleFonts.poppins(
-                              textStyle: TextStyle(
-                                color: Color(0xff7ccccc),
-                                fontSize: 12,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                          Text(
-                            '     240\nListeners',
-                            style: GoogleFonts.poppins(
-                              textStyle: TextStyle(
-                                color: Color(0xff7ccccc),
-                                fontSize: 12,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                          Text(
-                            '     300\nListening',
-                            style: GoogleFonts.poppins(
-                              textStyle: TextStyle(
-                                color: Color(0xff7ccccc),
-                                fontSize: 12,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                          Container(
-                            child: RaisedButton(
-                                elevation: 5,
-                                color: Color(0xff7ccccc),
-                                child: Text(
-                                  'Listen',
-                                  style: GoogleFonts.poppins(
-                                    textStyle: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                ),
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => HomeView(),
-                                      ));
-                                }),
-                          ),
-                        ],
-                      ),
-                    ],
-                  )),
+            ),
+            Expanded(
+              flex: 2,
+              child: FeatureButtonsView(
+                onUploadComplete: _onUploadComplete,
+              ),
             ),
             SizedBox(
               height: 10,
@@ -139,5 +73,14 @@ class _AddBanterState extends State<AddBanter> {
         ),
       ),
     );
+  }
+
+  Future<void> _onUploadComplete() async {
+    FirebaseStorage firebaseStorage = FirebaseStorage.instance;
+    ListResult listResult =
+        await firebaseStorage.ref().child('upload-voice-firebase').list();
+    setState(() {
+      references = listResult.items;
+    });
   }
 }
