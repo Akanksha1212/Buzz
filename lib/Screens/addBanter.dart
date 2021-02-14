@@ -1,3 +1,4 @@
+import 'package:buzz/record/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -112,7 +113,13 @@ class _AddBanterState extends State<AddBanter> {
                                     ),
                                   ),
                                 ),
-                                onPressed: () {}),
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => HomeView(),
+                                      ));
+                                }),
                           ),
                         ],
                       ),
@@ -122,6 +129,7 @@ class _AddBanterState extends State<AddBanter> {
             SizedBox(
               height: 10,
             ),
+
             // Container(
             //   margin: EdgeInsets.all(0),
             //   alignment: Alignment.bottomRight,

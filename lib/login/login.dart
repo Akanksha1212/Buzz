@@ -28,7 +28,7 @@ class _LoginState extends State<Login> {
     oauth.setWebViewScreenSize(rectSize);
 //0xff7ccccc
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xffD8EFEF),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

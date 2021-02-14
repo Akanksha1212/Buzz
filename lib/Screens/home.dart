@@ -14,85 +14,157 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xffD8EFEF), //Color(0xff7ccccc)
-        body: Column(
-          children: [
-            Container(
-              padding: EdgeInsets.fromLTRB(10, 50, 10, 20),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Column(children: [
-                      DashedCircle(
-                        child: Padding(
-                          padding: EdgeInsets.all(6.0),
-                          child: GestureDetector(
-                            child: CircleAvatar(
-                              radius: 40.0,
-                              // backgroundImage: NetworkImage(
-                              //     'https://img.icons8.com/clouds/2x/plus.png'),
-                              child: Icon(Icons.add),
-                            ),
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        StoryScreen(stories: stories),
-                                  ));
-                            },
-                          ),
-                        ),
-                        color: Color(0xff7ccccc),
-                      ),
-                      Text(
-                        'Add',
-                        style: GoogleFonts.poppins(
-                          textStyle: TextStyle(
-                            color: Color(0xff7ccccc),
-                            fontSize: 15,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ]),
-                    SizedBox(
-                      width: 13,
-                    ),
-                    MyStory(),
-                    SizedBox(
-                      width: 13,
-                    ),
-                    MyStory(),
-                    SizedBox(
-                      width: 13,
-                    ),
-                    MyStory(),
-                    SizedBox(
-                      width: 13,
-                    ),
-                    MyStory(),
-                    SizedBox(
-                      width: 13,
-                    ),
-                  ],
-                ),
+        appBar: AppBar(
+          title: Row(
+            children: [
+              Image.asset(
+                'assets/buzz.png',
+                height: 50,
+                width: 50,
               ),
-            ),
-            SizedBox(
-              width: 5,
-            ),
-            Container(
-              margin: EdgeInsets.all(0),
-              alignment: Alignment.bottomRight,
-              child: Image.asset(
-                'assets/gi.png',
-              ),
+              // Text(
+              //   'Buzz',
+              //   style: GoogleFonts.poppins(
+              //     textStyle: TextStyle(
+              //       color: Colors.white,
+              //       fontSize: 25,
+              //       fontWeight: FontWeight.w300,
+              //     ),
+              //   ),
+              // )
+            ],
+          ),
+          backgroundColor: Color(0xff7ccccc),
+          automaticallyImplyLeading: false,
+          actions: <Widget>[
+            PopupMenuButton<String>(
+              onSelected: handleClick,
+              itemBuilder: (BuildContext context) {
+                return {'Logout', 'Settings'}.map((String choice) {
+                  return PopupMenuItem<String>(
+                    value: choice,
+                    child: Text(choice),
+                  );
+                }).toList();
+              },
             ),
           ],
+        ),
+        backgroundColor: Color(0xffD8EFEF), //Color(0xff7ccccc)
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                padding: EdgeInsets.fromLTRB(4, 20, 10, 20),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Column(children: [
+                        DashedCircle(
+                          child: Padding(
+                            padding: EdgeInsets.all(6.0),
+                            child: GestureDetector(
+                              child: CircleAvatar(
+                                radius: 40.0,
+                                // backgroundImage: NetworkImage(
+                                //     'https://img.icons8.com/clouds/2x/plus.png'),
+                                child: Icon(Icons.add),
+                              ),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          StoryScreen(stories: stories),
+                                    ));
+                              },
+                            ),
+                          ),
+                          color: Color(0xff7ccccc),
+                        ),
+                        Text(
+                          'Add',
+                          style: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                              color: Color(0xff7ccccc),
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ]),
+                      SizedBox(
+                        width: 13,
+                      ),
+                      MyStory(),
+                      SizedBox(
+                        width: 13,
+                      ),
+                      MyStory(),
+                      SizedBox(
+                        width: 13,
+                      ),
+                      MyStory(),
+                      SizedBox(
+                        width: 13,
+                      ),
+                      MyStory(),
+                      SizedBox(
+                        width: 13,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 5,
+              ),
+              Container(
+                margin: EdgeInsets.all(0),
+                alignment: Alignment.bottomRight,
+                child: Image.asset(
+                  'assets/gi.png',
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.all(0),
+                alignment: Alignment.bottomRight,
+                child: Image.asset(
+                  'assets/gi.png',
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.all(0),
+                alignment: Alignment.bottomRight,
+                child: Image.asset(
+                  'assets/gi.png',
+                ),
+              ),
+              EachPost(),
+              SizedBox(
+                height: 25,
+              ),
+              Container(
+                margin: EdgeInsets.all(0),
+                alignment: Alignment.bottomRight,
+                child: Image.asset(
+                  'assets/gi.png',
+                ),
+              ),
+            ],
+          ),
         ));
+  }
+}
+
+void handleClick(String value) {
+  switch (value) {
+    case 'Logout':
+      break;
+    case 'Settings':
+      break;
   }
 }
 
@@ -177,6 +249,96 @@ class _MyStoryState extends State<MyStory> with SingleTickerProviderStateMixin {
           ),
         ],
       ),
+    );
+  }
+}
+
+class EachPost extends StatefulWidget {
+  @override
+  _EachPostState createState() => _EachPostState();
+}
+
+class _EachPostState extends State<EachPost> {
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      alignment: Alignment.topCenter,
+      children: <Widget>[
+        Padding(
+          padding: EdgeInsets.only(top: 140 / 2.0),
+          child: Container(
+            height: 400.0,
+            width: MediaQuery.of(context).size.width / 1.1,
+            child: Card(
+                elevation: 4,
+                color: Colors.white,
+                child: Container(
+                  padding: EdgeInsets.only(
+                    top: 150 / 2.0,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Ada1212',
+                        style: GoogleFonts.poppins(
+                          textStyle: TextStyle(
+                            color: Color(0xff7ccccc),
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        'What are you still salty about?',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.poppins(
+                          textStyle: TextStyle(
+                            color: Color(0xff7ccccc),
+                            fontSize: 35,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        '250k Plays | 500 Banters',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.poppins(
+                          textStyle: TextStyle(
+                            color: Color(0xff7ccccc),
+                            fontSize: 15,
+                            fontWeight: FontWeight.w300,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 2,
+                      ),
+                    ],
+                  ),
+                )),
+          ),
+        ),
+        Container(
+          width: 140,
+          height: 140,
+          decoration:
+              ShapeDecoration(shape: CircleBorder(), color: Color(0xff7ccccc)),
+          child: Padding(
+            padding: EdgeInsets.all(5),
+            child: DecoratedBox(
+              decoration: ShapeDecoration(
+                  shape: CircleBorder(),
+                  image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: NetworkImage(
+                        'https://mindbodygreen-res.cloudinary.com/images/w_767,q_auto:eco,f_auto,fl_lossy/usr/RetocQT/sarah-fielding.jpg',
+                      ))),
+            ),
+          ),
+        )
+      ],
     );
   }
 }
