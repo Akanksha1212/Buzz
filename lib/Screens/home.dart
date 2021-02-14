@@ -1,3 +1,4 @@
+import 'package:buzz/EachPostData/post1.dart';
 import 'package:buzz/Screens/storyScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:dashed_circle/dashed_circle.dart';
@@ -128,11 +129,20 @@ class _HomeState extends State<Home> {
               //   ),
               // ),
 
-              EachPost(),
+              GestureDetector(
+                child: EachPost(),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Post1(),
+                      ));
+                },
+              ),
               SizedBox(
                 height: 25,
               ),
-              EachPost(),
+              EachPost1(),
               SizedBox(
                 height: 25,
               ),
@@ -482,6 +492,20 @@ class _EachPostState extends State<EachPost> {
                       SizedBox(
                         height: 2,
                       ),
+                      Text(
+                        'Posted 30m ago',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.poppins(
+                          textStyle: TextStyle(
+                            color: Colors.black38,
+                            fontSize: 10,
+                            fontWeight: FontWeight.w300,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 2,
+                      ),
                     ],
                   ),
                 )),
@@ -501,6 +525,110 @@ class _EachPostState extends State<EachPost> {
                       fit: BoxFit.cover,
                       image: NetworkImage(
                         'https://mindbodygreen-res.cloudinary.com/images/w_767,q_auto:eco,f_auto,fl_lossy/usr/RetocQT/sarah-fielding.jpg',
+                      ))),
+            ),
+          ),
+        )
+      ],
+    );
+  }
+}
+
+class EachPost1 extends StatefulWidget {
+  @override
+  _EachPost1State createState() => _EachPost1State();
+}
+
+class _EachPost1State extends State<EachPost1> {
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      alignment: Alignment.topCenter,
+      children: <Widget>[
+        Padding(
+          padding: EdgeInsets.only(top: 140 / 2.0),
+          child: Container(
+            height: 400.0,
+            width: MediaQuery.of(context).size.width / 1.1,
+            child: Card(
+                elevation: 4,
+                color: Colors.white,
+                child: Container(
+                  padding: EdgeInsets.only(
+                    top: 150 / 2.0,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Rashmi',
+                        style: GoogleFonts.poppins(
+                          textStyle: TextStyle(
+                            color: Color(0xff7ccccc),
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        'What shall I do with my free time?',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.poppins(
+                          textStyle: TextStyle(
+                            color: Color(0xff7ccccc),
+                            fontSize: 35,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        '340k Plays   |   570 Banters',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.poppins(
+                          textStyle: TextStyle(
+                            color: Color(0xff7ccccc),
+                            fontSize: 15,
+                            fontWeight: FontWeight.w300,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 2,
+                      ),
+                      Text(
+                        'Posted 45m ago',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.poppins(
+                          textStyle: TextStyle(
+                            color: Colors.black38,
+                            fontSize: 10,
+                            fontWeight: FontWeight.w300,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 2,
+                      ),
+                    ],
+                  ),
+                )),
+          ),
+        ),
+        Container(
+          width: 140,
+          height: 140,
+          decoration:
+              ShapeDecoration(shape: CircleBorder(), color: Color(0xff7ccccc)),
+          child: Padding(
+            padding: EdgeInsets.all(5),
+            child: DecoratedBox(
+              decoration: ShapeDecoration(
+                  shape: CircleBorder(),
+                  image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: NetworkImage(
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJZG-8Pk5VYr_MOP4Ks3uEeZdArTUAizNRwg&usqp=CAU',
                       ))),
             ),
           ),

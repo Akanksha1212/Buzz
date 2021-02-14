@@ -47,7 +47,7 @@ class _CloudRecordListViewState extends State<CloudRecordListView> {
       reverse: true,
       itemBuilder: (BuildContext context, int index) {
         return Container(
-          width: 400,
+          width: 300,
           child: Card(
             color: Color(0xff7ccccc),
             child: Column(
@@ -57,8 +57,8 @@ class _CloudRecordListViewState extends State<CloudRecordListView> {
                     children: [
                       Image.asset(
                         'assets/happy.png',
-                        height: 80,
-                        width: 80,
+                        height: 20,
+                        width: 20,
                       ),
                       Text(
                         'Posted on ' + _timeString.toString(),

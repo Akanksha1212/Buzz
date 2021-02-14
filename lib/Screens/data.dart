@@ -9,13 +9,14 @@ final User user = User(
 final List<Story> stories = [
   Story(
     url:
-        'https://images.unsplash.com/photo-1534103362078-d07e750bd0c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
+        'https://i.pinimg.com/564x/f8/05/7f/f8057ff0ce3f70b7f7398edea4e13f8e.jpg',
     media: MediaType.image,
     duration: const Duration(seconds: 10),
     user: user,
   ),
   Story(
-    url: 'https://media.giphy.com/media/moyzrwjUIkdNe/giphy.gif',
+    url:
+        'https://i.pinimg.com/564x/d7/7a/aa/d77aaa09f292b87e2e5fdd1c03beece4.jpg',
     media: MediaType.image,
     user: User(
       name: 'Camilla',
@@ -33,14 +34,14 @@ final List<Story> stories = [
   ),
   Story(
     url:
-        'https://images.unsplash.com/photo-1531694611353-d4758f86fa6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80',
+        'https://i.pinimg.com/564x/c1/24/f0/c124f0535c5844b36e6132c675ad6585.jpg',
     media: MediaType.image,
     duration: const Duration(seconds: 5),
     user: user,
   ),
   Story(
     url:
-        'https://static.videezy.com/system/resources/previews/000/007/536/original/rockybeach.mp4',
+        'https://i.pinimg.com/236x/92/63/a3/9263a34965c770a6acd2159f3738f3ec.jpg',
     media: MediaType.video,
     duration: const Duration(seconds: 0),
     user: user,
