@@ -32,6 +32,19 @@ class _AddBanterState extends State<AddBanter> {
               alignment: Alignment.bottomRight,
               child: Image.asset('assets/path.png', height: 200, width: 200),
             ),
+            Text(
+              'Your Banters',
+              style: GoogleFonts.poppins(
+                textStyle: TextStyle(
+                  color: Color(0xff7ccccc),
+                  fontSize: 30,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 15,
+            ),
             Expanded(
               flex: 4,
               child: references == null

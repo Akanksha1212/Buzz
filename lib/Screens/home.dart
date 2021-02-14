@@ -98,11 +98,11 @@ class _HomeState extends State<Home> {
                       SizedBox(
                         width: 13,
                       ),
-                      MyStory(),
+                      MyStory1(),
                       SizedBox(
                         width: 13,
                       ),
-                      MyStory(),
+                      MyStory2(),
                       SizedBox(
                         width: 13,
                       ),
@@ -218,7 +218,7 @@ class _MyStoryState extends State<MyStory> with SingleTickerProviderStateMixin {
                       child: CircleAvatar(
                         radius: 40.0,
                         backgroundImage: NetworkImage(
-                            "https://images.unsplash.com/photo-1564564295391-7f24f26f568b"),
+                            "https://www.harleytherapy.co.uk/counselling/wp-content/uploads/16297800391_5c6e812832.jpg"),
                       ),
                       onTap: () {
                         Navigator.push(
@@ -234,6 +234,178 @@ class _MyStoryState extends State<MyStory> with SingleTickerProviderStateMixin {
           ),
           Text(
             'Olivia',
+            style: GoogleFonts.poppins(
+              textStyle: TextStyle(
+                color: Color(0xff7ccccc),
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class MyStory1 extends StatefulWidget {
+  @override
+  _MyStory1State createState() => _MyStory1State();
+}
+
+class _MyStory1State extends State<MyStory1>
+    with SingleTickerProviderStateMixin {
+  /// Variables
+  Animation gap;
+  Animation base;
+  Animation reverse;
+  AnimationController controller;
+
+  /// Init
+  @override
+  void initState() {
+    super.initState();
+    controller =
+        AnimationController(vsync: this, duration: Duration(seconds: 4));
+    base = CurvedAnimation(parent: controller, curve: Curves.easeOut);
+    reverse = Tween<double>(begin: 0.0, end: -1.0).animate(base);
+    gap = Tween<double>(begin: 3.0, end: 0.0).animate(base)
+      ..addListener(() {
+        setState(() {});
+      });
+    controller.forward();
+  }
+
+  /// Dispose
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  // Widget
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.center,
+      child: Column(
+        children: [
+          RotationTransition(
+            turns: base,
+            child: DashedCircle(
+              gapSize: gap.value,
+              dashes: 40,
+              color: Color(0xff7ccccc),
+              child: RotationTransition(
+                turns: reverse,
+                child: Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: GestureDetector(
+                      child: CircleAvatar(
+                        radius: 40.0,
+                        backgroundImage: NetworkImage(
+                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeIMNq82geLWxUoQ53wu9WemcDKOQOdX1oYg&usqp=CAU"),
+                      ),
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  StoryScreen(stories: stories),
+                            ));
+                      }),
+                ),
+              ),
+            ),
+          ),
+          Text(
+            'Camilla',
+            style: GoogleFonts.poppins(
+              textStyle: TextStyle(
+                color: Color(0xff7ccccc),
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class MyStory2 extends StatefulWidget {
+  @override
+  _MyStory2State createState() => _MyStory2State();
+}
+
+class _MyStory2State extends State<MyStory2>
+    with SingleTickerProviderStateMixin {
+  /// Variables
+  Animation gap;
+  Animation base;
+  Animation reverse;
+  AnimationController controller;
+
+  /// Init
+  @override
+  void initState() {
+    super.initState();
+    controller =
+        AnimationController(vsync: this, duration: Duration(seconds: 4));
+    base = CurvedAnimation(parent: controller, curve: Curves.easeOut);
+    reverse = Tween<double>(begin: 0.0, end: -1.0).animate(base);
+    gap = Tween<double>(begin: 3.0, end: 0.0).animate(base)
+      ..addListener(() {
+        setState(() {});
+      });
+    controller.forward();
+  }
+
+  /// Dispose
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  // Widget
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.center,
+      child: Column(
+        children: [
+          RotationTransition(
+            turns: base,
+            child: DashedCircle(
+              gapSize: gap.value,
+              dashes: 40,
+              color: Color(0xff7ccccc),
+              child: RotationTransition(
+                turns: reverse,
+                child: Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: GestureDetector(
+                      child: CircleAvatar(
+                        radius: 40.0,
+                        backgroundImage: NetworkImage(
+                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJZG-8Pk5VYr_MOP4Ks3uEeZdArTUAizNRwg&usqp=CAU"),
+                      ),
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  StoryScreen(stories: stories),
+                            ));
+                      }),
+                ),
+              ),
+            ),
+          ),
+          Text(
+            'Rashmi',
             style: GoogleFonts.poppins(
               textStyle: TextStyle(
                 color: Color(0xff7ccccc),

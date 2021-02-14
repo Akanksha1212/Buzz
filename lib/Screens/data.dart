@@ -2,8 +2,9 @@ import 'package:buzz/models/story_model.dart';
 import 'package:buzz/models/user_model.dart';
 
 final User user = User(
-  name: 'John Doe',
-  profileImageUrl: 'https://wallpapercave.com/wp/AYWg3iu.jpg',
+  name: 'Camilla',
+  profileImageUrl:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeIMNq82geLWxUoQ53wu9WemcDKOQOdX1oYg&usqp=CAU',
 );
 final List<Story> stories = [
   Story(
@@ -17,8 +18,9 @@ final List<Story> stories = [
     url: 'https://media.giphy.com/media/moyzrwjUIkdNe/giphy.gif',
     media: MediaType.image,
     user: User(
-      name: 'John Doe',
-      profileImageUrl: 'https://wallpapercave.com/wp/AYWg3iu.jpg',
+      name: 'Camilla',
+      profileImageUrl:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeIMNq82geLWxUoQ53wu9WemcDKOQOdX1oYg&usqp=CAU',
     ),
     duration: const Duration(seconds: 7),
   ),

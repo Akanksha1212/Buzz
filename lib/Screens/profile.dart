@@ -129,10 +129,28 @@ class _ProfileState extends State<Profile> {
                         child: Card(
                           elevation: 2,
                           child: ListTile(
-                            leading: FlutterLogo(size: 72.0),
-                            title: Text('Three-line ListTile'),
+                            leading: Image.network(
+                                'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Emoji_u2665.svg/1200px-Emoji_u2665.svg.png'),
+                            title: Text(
+                              'Camilla',
+                              style: GoogleFonts.poppins(
+                                textStyle: TextStyle(
+                                  color: Color(0xff7ccccc),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
                             subtitle: Text(
-                                'A sufficiently long subtitle warrants three lines.'),
+                              '2020 wasnt bad',
+                              style: GoogleFonts.poppins(
+                                textStyle: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ),
                             trailing: Icon(Icons.more_vert),
                             isThreeLine: true,
                           ),
@@ -147,10 +165,28 @@ class _ProfileState extends State<Profile> {
                         child: Card(
                           elevation: 2,
                           child: ListTile(
-                            leading: FlutterLogo(size: 72.0),
-                            title: Text('Three-line ListTile'),
+                            leading: Image.network(
+                                'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Emoji_u2665.svg/1200px-Emoji_u2665.svg.png'),
+                            title: Text(
+                              'Ada',
+                              style: GoogleFonts.poppins(
+                                textStyle: TextStyle(
+                                  color: Color(0xff7ccccc),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
                             subtitle: Text(
-                                'A sufficiently long subtitle warrants three lines.'),
+                              'Has anyone heard of this band?',
+                              style: GoogleFonts.poppins(
+                                textStyle: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ),
                             trailing: Icon(Icons.more_vert),
                             isThreeLine: true,
                           ),
@@ -165,10 +201,28 @@ class _ProfileState extends State<Profile> {
                         child: Card(
                           elevation: 2,
                           child: ListTile(
-                            leading: FlutterLogo(size: 72.0),
-                            title: Text('Three-line ListTile'),
+                            leading: Image.network(
+                                'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Emoji_u2665.svg/1200px-Emoji_u2665.svg.png'),
+                            title: Text(
+                              'Christy',
+                              style: GoogleFonts.poppins(
+                                textStyle: TextStyle(
+                                  color: Color(0xff7ccccc),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
                             subtitle: Text(
-                                'A sufficiently long subtitle warrants three lines.'),
+                              'I had a talk with an old lady...',
+                              style: GoogleFonts.poppins(
+                                textStyle: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ),
                             trailing: Icon(Icons.more_vert),
                             isThreeLine: true,
                           ),
@@ -183,10 +237,28 @@ class _ProfileState extends State<Profile> {
                         child: Card(
                           elevation: 2,
                           child: ListTile(
-                            leading: FlutterLogo(size: 72.0),
-                            title: Text('Three-line ListTile'),
+                            leading: Image.network(
+                                'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Emoji_u2665.svg/1200px-Emoji_u2665.svg.png'),
+                            title: Text(
+                              'Jaden',
+                              style: GoogleFonts.poppins(
+                                textStyle: TextStyle(
+                                  color: Color(0xff7ccccc),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
                             subtitle: Text(
-                                'A sufficiently long subtitle warrants three lines.'),
+                              'Went on a camping trip',
+                              style: GoogleFonts.poppins(
+                                textStyle: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ),
                             trailing: Icon(Icons.more_vert),
                             isThreeLine: true,
                           ),
@@ -201,10 +273,28 @@ class _ProfileState extends State<Profile> {
                         child: Card(
                           elevation: 2,
                           child: ListTile(
-                            leading: FlutterLogo(size: 72.0),
-                            title: Text('Three-line ListTile'),
+                            leading: Image.network(
+                                'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Emoji_u2665.svg/1200px-Emoji_u2665.svg.png'),
+                            title: Text(
+                              'Maya',
+                              style: GoogleFonts.poppins(
+                                textStyle: TextStyle(
+                                  color: Color(0xff7ccccc),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
                             subtitle: Text(
-                                'A sufficiently long subtitle warrants three lines.'),
+                              'Happy Valentines\'s Day',
+                              style: GoogleFonts.poppins(
+                                textStyle: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ),
                             trailing: Icon(Icons.more_vert),
                             isThreeLine: true,
                           ),
